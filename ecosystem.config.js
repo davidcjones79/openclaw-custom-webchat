@@ -1,9 +1,11 @@
+const path = require('path');
+
 module.exports = {
   apps: [{
     name: 'webchat',
     script: '/opt/homebrew/bin/caddy',
-    args: 'run --config /Users/davidjones/clawd/webchat/Caddyfile',
-    cwd: '/Users/davidjones/clawd/webchat',
+    args: `run --config ${path.join(__dirname, 'Caddyfile')}`,
+    cwd: __dirname,
     watch: false,
     autorestart: true,
     max_restarts: 10,
