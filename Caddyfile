@@ -1,0 +1,34 @@
+# Webchat server
+# Serves on port 8080, accessible locally
+
+:8080 {
+    root * /Users/davidjones/clawd/webchat
+    file_server
+    
+    # Enable compression
+    encode gzip zstd
+    
+    # Cache static assets
+    @static {
+        path *.css *.js *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2
+    }
+    header @static Cache-Control "public, max-age=3600"
+    
+    # SPA fallback - serve index.html for missing files
+    try_files {path} /index.html
+    
+    # Basic security headers
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "SAMEORIGIN"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+    
+    # Logging
+    log {
+        output file /Users/davidjones/clawd/webchat/access.log {
+            roll_size 10mb
+            roll_keep 3
+        }
+    }
+}
