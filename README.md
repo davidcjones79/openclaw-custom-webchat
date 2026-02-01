@@ -21,14 +21,16 @@ Enhanced web interface for OpenClaw chat sessions with custom UI.
 ### Quick Start
 
 ```bash
-# Clone to your OpenClaw workspace
-cd ~/clawd
+# Clone anywhere you want - doesn't have to be ~/clawd
+cd /path/to/your/preferred/location
 git clone <YOUR_REPO_URL> webchat
 cd webchat
 
 # Start the server
 node serve.js
 ```
+
+**Note:** `~/clawd` is just the conventional OpenClaw workspace directory, but this webchat works from any location.
 
 The webchat will be available at `http://localhost:8889`
 
@@ -98,10 +100,16 @@ webchat/
 
 ## Deployment to New Mac Mini
 
-1. **Clone the repository:**
+1. **Clone the repository (anywhere you want):**
    ```bash
+   # Option 1: In OpenClaw workspace (recommended)
    cd ~/clawd
    git clone <YOUR_REPO_URL> webchat
+
+   # Option 2: Any other location works too
+   cd ~/apps  # or anywhere else
+   git clone <YOUR_REPO_URL> webchat
+
    cd webchat
    ```
 
