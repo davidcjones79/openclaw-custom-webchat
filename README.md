@@ -18,12 +18,31 @@ Enhanced web interface for OpenClaw chat sessions with custom UI.
 
 ## Installation
 
-### Quick Start
+### Automated Install (Recommended)
+
+```bash
+# Clone the repository
+cd ~/clawd  # or any directory you prefer
+git clone https://github.com/davidcjones79/openclaw-custom-webchat.git webchat
+cd webchat
+
+# Run the installer
+./install.sh
+```
+
+The installer will:
+- ✅ Check prerequisites (Node.js, OpenClaw, Tailscale)
+- ✅ Optionally install with PM2 for auto-restart
+- ✅ Setup Tailscale serving
+- ✅ Auto-detect your OpenClaw token
+- ✅ Display ready-to-use access URLs
+
+### Manual Install
 
 ```bash
 # Clone anywhere you want - doesn't have to be ~/clawd
 cd /path/to/your/preferred/location
-git clone <YOUR_REPO_URL> webchat
+git clone https://github.com/davidcjones79/openclaw-custom-webchat.git webchat
 cd webchat
 
 # Start the server
@@ -100,15 +119,26 @@ webchat/
 
 ## Deployment to New Mac Mini
 
+### Easy Way (Use the Installer)
+
+```bash
+cd ~/clawd
+git clone https://github.com/davidcjones79/openclaw-custom-webchat.git webchat
+cd webchat
+./install.sh
+```
+
+### Manual Way
+
 1. **Clone the repository (anywhere you want):**
    ```bash
    # Option 1: In OpenClaw workspace (recommended)
    cd ~/clawd
-   git clone <YOUR_REPO_URL> webchat
+   git clone https://github.com/davidcjones79/openclaw-custom-webchat.git webchat
 
    # Option 2: Any other location works too
    cd ~/apps  # or anywhere else
-   git clone <YOUR_REPO_URL> webchat
+   git clone https://github.com/davidcjones79/openclaw-custom-webchat.git webchat
 
    cd webchat
    ```
